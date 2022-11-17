@@ -7,13 +7,14 @@ const {CookieAccessInfo, CookieJar, Cookie} = cookiejar
 
 let config = {
     httpprefix: 'https', port: 443,
-    serverName: 'siteproxy.netptop.workers.dev',
+    serverName: 'wall3.freethu.top',
 }
 let blockedSites = ['www.chase.com'] // accessing to chase.com was reported by google
 
 if (process.env.herokuAddr) {
     config.serverName = process.env.herokuAddr
 }
+
 config.serverName = config.serverName.replace(/https?:\/\//g, '')
 console.log(`config.serverName:${config.serverName}`)
 if (process.env.localFlag === 'true') {
